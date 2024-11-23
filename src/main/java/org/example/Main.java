@@ -1,37 +1,26 @@
-//check items in testing
-/*
-1-IN-OrderDto
-        when as below-will auto identify the CustomerAndOrderData fields from FE nested obj
-    //@Embedded-chat has not inserted this.
-    private CustomerAndOrderData customerAndOrderData;
-
-2-IN-OrderEntityEmbd
-        Obj type is from entity obj type .
-        name is same as dto obj name.
-        -check working properly.
-    @Embedded
-    private ""CustomerAndOrderDataEmbd"" customerAndOrderData;
-
-3-IN-DTO-CustomerAndOrderData
-    check whether will it map without above cls ( means Only having
-    entity same as Embd and OneTo when from FE name is CustomerAndOrderData )
-
-
-*/
-
-
 package org.example;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication //(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class);
+
+
+
+
+//        // Press Alt+Enter with your caret at the highlighted text to see how
+//        // IntelliJ IDEA suggests fixing it.
+//        System.out.printf("Hello and welcome!");
+//
+//        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
+//        for (int i = 1; i <= 5; i++) {
+//
+//            // Press Shift+F9 to start debugging your code. We have set one breakpoint
+//            // for you, but you can always add more by pressing Ctrl+F8.
+//            System.out.println("i = " + i);
+//        }
     }
 }
-
-
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.

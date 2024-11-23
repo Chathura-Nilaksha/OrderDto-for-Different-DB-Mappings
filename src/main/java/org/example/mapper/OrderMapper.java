@@ -3,9 +3,9 @@ package org.example.mapper;
 //@Mapper(componentModel = "spring")
 //public interface OrderMapper {
 //
-//    OrderDto toDto(OrderEntityEmbd orderEntity);
+//    OrderDto toDto(OrderEntity orderEntity);
 //
-//    OrderEntityEmbd toEntity(OrderDto orderDto);
+//    OrderEntity toEntity(OrderDto orderDto);
 //
 //    List<CartItemDto> toCartItemDtos(List<CartItemEntity> cartItemEntities);
 //

@@ -27,6 +27,6 @@ public class CartItemEntity {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
-    private OrderEntityEmbd order;
+    private OrderEntity order;
 }
 
