@@ -19,7 +19,7 @@ public class OrderEntityOneTo {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_and_order_data_id", referencedColumnName = "id")
+    @JoinColumn(name = "customer_and_order_data_id", referencedColumnName = "id" )
     private CustomerAndOrderDataOneTo customerAndOrderData;
 
     @Column(name = "is_save_shipping_data")
@@ -32,7 +32,7 @@ public class OrderEntityOneTo {
     private String cardType;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CartItemEntity> cartItems;
+    private List<CartItemEntityOneTo> cartItems;
 
     @Column(name = "grand_total")
     private Double grandTotal;

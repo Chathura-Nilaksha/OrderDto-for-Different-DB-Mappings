@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "ordersEmbd")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,7 +31,7 @@ public class OrderEntityEmbd {
     private String cardType;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CartItemEntity> cartItems;
+    private List<CartItemEntityEmbd> cartItems;
 
     @Column(name = "grand_total")
     private Double grandTotal;

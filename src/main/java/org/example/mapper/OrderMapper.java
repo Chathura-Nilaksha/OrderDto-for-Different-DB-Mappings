@@ -7,7 +7,7 @@ package org.example.mapper;
 //
 //    OrderEntityEmbd toEntity(OrderDto orderDto);
 //
-//    List<CartItemDto> toCartItemDtos(List<CartItemEntity> cartItemEntities);
+//    List<CartItemDto> toCartItemDtos(List<CartItemEntityEmbd> cartItemEntities);
 //
-//    List<CartItemEntity> toCartItemEntities(List<CartItemDto> cartItemDtos);
+//    List<CartItemEntityEmbd> toCartItemEntities(List<CartItemDto> cartItemDtos);
 //}

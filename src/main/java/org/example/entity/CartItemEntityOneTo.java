@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "cart_items")
+@Table(name = "cart_items_one_to")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartItemEntity {
+public class CartItemEntityOneTo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +25,8 @@ public class CartItemEntity {
     @Column(name = "price", nullable = false)
     private Double price;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "order_id", nullable = false)
-    private OrderEntityEmbd order;
+    private OrderEntityOneTo order;
 }
 
