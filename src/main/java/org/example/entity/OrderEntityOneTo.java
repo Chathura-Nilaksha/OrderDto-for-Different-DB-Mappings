@@ -12,14 +12,15 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderEntity {
+public class OrderEntityOneTo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Embedded
-    private CustomerAndOrderData customerAndOrderData;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_and_order_data_id", referencedColumnName = "id")
+    private CustomerAndOrderDataOneTo customerAndOrderData;
 
     @Column(name = "is_save_shipping_data")
     private Boolean isSaveShippingDataInDB;

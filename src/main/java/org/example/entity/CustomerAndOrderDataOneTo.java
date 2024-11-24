@@ -1,16 +1,21 @@
 package org.example.entity;
 
+import jakarta.persistence.*;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Embeddable
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerAndOrderData {
+public class CustomerAndOrderDataOneTo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String customerName;
     private String customerEmail;
 
@@ -20,10 +25,13 @@ public class CustomerAndOrderData {
     @Column(name = "billing_address")
     private String billingAddress;
 
+    @OneToOne(mappedBy = "customerAndOrderData", cascade = CascadeType.ALL)
+    private OrderEntityOneTo order;
+
 
 }
 //C-below are Hibernate Validator annotations to
-//              enforce constraints in DTOs or entities:
+//              enforce constraints( bala karanava) in DTOs or entities:
 //    @NotNull
 //    @Size(max = 100)
 //    private String customerName;
@@ -31,8 +39,9 @@ public class CustomerAndOrderData {
 //    @Email
 //    private String customerEmail;
 
-
+// OP-1
 //See both CustomerAndOrderData and orderEntity together
+//@Embeddable
 //@Data
 //@NoArgsConstructor
 //@AllArgsConstructor
@@ -47,10 +56,9 @@ public class CustomerAndOrderData {
 //@Embedded
 //private CustomerAndOrderDataEntity customerAndOrderData;
 
-
+// OP-2
 //See both CustomerAndOrderDataEntity and orderEntity together
 //@Entity
-//@Table(name = "customer_order_data")
 //@Data
 //@NoArgsConstructor
 //@AllArgsConstructor
@@ -73,7 +81,7 @@ public class CustomerAndOrderData {
 //    private String billingAddress;
 //
 //    @OneToOne(mappedBy = "customerAndOrderData", cascade = CascadeType.ALL)
-//    private OrderEntity order;
+//    private OrderEntityEmbd order;
 //}below must be in orderEntity with relationship // OP2
 //@OneToOne(cascade = CascadeType.ALL)
 //@JoinColumn(name = "customer_and_order_data_id", referencedColumnName = "id")
@@ -97,7 +105,7 @@ public class CustomerAndOrderData {
 //
 //@Mapper(componentModel = "spring", uses = CustomerAndOrderDataMapper.class)
 //public interface OrderMapper {
-//    OrderDto toDto(OrderEntity entity);
-//    OrderEntity toEntity(OrderDto dto);
+//    OrderDto toDto(OrderEntityEmbd entity);
+//    OrderEntityEmbd toEntity(OrderDto dto);
 //}
 
